@@ -59,6 +59,21 @@
                 Admin Items
             </a>
         </div>
+
+        {{-- TAMBAHAN: Tugas 2 (Portofolio) --}}
+        <h6 class="mt-5">Tugas 2: Portofolio (Hasil Praktikum Web Statis)</h6>
+        <div class="list-group list-group-numbered mt-4 mb-5">
+            <a href="{{ route('home') }}" class="list-group-item list-group-item-action">
+                Halaman Beranda (Index)
+            </a>
+            <a href="{{ route('about') }}" class="list-group-item list-group-item-action">
+                Halaman Tentang (About)
+            </a>
+            <a href="{{ route('portfolio') }}" class="list-group-item list-group-item-action">
+                Halaman Portofolio (Portfolio)
+            </a>
+        </div>
+
     </div>
     @vite('resources/js/app.js')
 </body>

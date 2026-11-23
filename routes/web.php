@@ -3,10 +3,25 @@
 use App\Http\Controllers\RouteController;
 use Illuminate\Support\Facades\Route;
 
+/* ==========================================
+   1. ROUTE UNTUK TUGAS PORTOFOLIO (Tugas 2)
+   ========================================== */
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('index');
+})->name('home');
 
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/portfolio', function () {
+    return view('portfolio');
+})->name('portfolio');
+
+
+/* ==========================================
+   2. ROUTE UNTUK PRAKTIKUM ROUTING (Bab 5)
+   ========================================== */
 Route::get('/routing', function() {
     return view('routing');
 });
@@ -21,9 +36,6 @@ Route::view('/view_route', 'view_route', ['name' => 'Zunnurain']);
 
 // 5.5 Controller route
 Route::get('/controller_route', [RouteController::class, 'index']);
-
-// 5.6 Redirect route (menggantikan route '/' di atas)
-Route::redirect('/', '/routing');
 
 // 5.7 Required parameter
 Route::get('/user/{id}', function($id) {
@@ -76,7 +88,6 @@ Route::prefix('admin')->name('admin.')->group(function() {
 });
 
 // 5.12 Fallback route (HARUS PALING BAWAH)
-// Hapus tanda // di 3 baris berikut setelah screenshot 404 (5.9) diambil
- Route::fallback(function() {
-     return 'This is Fallback Route';
- });
+Route::fallback(function() {
+    return 'This is Fallback Route';
+});
